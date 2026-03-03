@@ -33,7 +33,7 @@
 
         .font-mono { font-family: 'Share Tech Mono', monospace; }
 
-        /* Paneles de maquinaria pesada moderna */
+        /* Modern heavy machinery panels */
         .panel-metal {
             background: linear-gradient(135deg, #1e2430 0%, #13171f 100%);
             border: 1px solid var(--panel-border);
@@ -47,7 +47,7 @@
             position: relative;
         }
 
-        /* Pantallas y lecturas digitales */
+        /* Screens and digital readouts */
         .panel-inset {
             background: #05070a;
             background-image: repeating-linear-gradient(
@@ -65,7 +65,7 @@
             border-radius: 6px;
         }
 
-        /* Tornillos industriales Torx */
+        /* Industrial Torx screws */
         .screw {
             position: absolute;
             width: 12px;
@@ -100,7 +100,7 @@
             border-radius: 6px;
         }
 
-        /* Simulación de botones de membrana */
+        /* Membrane button simulation */
         .btn-action {
             position: relative;
             overflow: hidden;
@@ -156,7 +156,7 @@
         .glow-text-blue { text-shadow: 0 0 8px rgba(0, 229, 255, 0.6); }
         .glow-text-green { text-shadow: 0 0 8px rgba(57, 255, 20, 0.6); }
         
-        /* Barra de desplazamiento personalizada */
+        /* Custom scrollbar */
         ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-track { background: #05070a; }
         ::-webkit-scrollbar-thumb { background: #3b4559; border-radius: 3px; }
@@ -165,7 +165,16 @@
 </head>
 <body class="h-screen w-screen m-0 p-0 flex flex-col overflow-hidden text-center select-none" style="background-color: #080a0f; background-image: linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px); background-size: 30px 30px; color: #ffffff;">
 
-    <!-- PANTALLA DE INICIO -->
+    <!-- INITIALIZATION SCREEN (To unlock browser audio) -->
+    <div id="init-overlay" onclick="window.initializeSystem()" class="fixed inset-0 z-[200] bg-[#05070a] flex flex-col items-center justify-center cursor-pointer text-white">
+        <svg class="w-16 h-16 mb-4 text-[#00e5ff] animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v2m0 8v2m-6-6H4m16 0h-2m-9.172 6.172l1.414-1.414M6.343 6.343l1.414 1.414m10.828 10.828l-1.414-1.414M17.657 6.343l-1.414 1.414"></path>
+        </svg>
+        <h2 class="text-2xl lg:text-4xl font-black text-[#00e5ff] tracking-widest uppercase animate-pulse glow-text-blue">System Initialization</h2>
+        <p class="text-[#64748b] font-mono mt-3 text-sm tracking-widest">(Click anywhere to start)</p>
+    </div>
+
+    <!-- SPLASH SCREEN -->
     <div id="splash-screen" class="fixed inset-0 z-[100] flex flex-col items-center justify-center p-2 lg:p-4 text-center text-white overflow-y-auto">
         <div class="max-w-4xl w-full panel-metal p-5 lg:p-8 rounded-2xl shadow-2xl my-auto relative border border-[#ff6a0040]">
             <div class="screw screw-big screw-tl"></div><div class="screw screw-big screw-tr"></div><div class="screw screw-big screw-bl"></div><div class="screw screw-big screw-br"></div>
@@ -179,19 +188,19 @@
                 <div>
                     <h3 class="text-[#00e5ff] font-bold uppercase mb-2 flex items-center text-sm tracking-wider">
                         <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h.01a1 1 0 100-2H10zm3 0a1 1 0 000 2h.01a1 1 0 100-2H13zM7 13a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h.01a1 1 0 100-2H10zm3 0a1 1 0 000 2h.01a1 1 0 100-2H13z" clip-rule="evenodd"></path></svg>
-                        Objetivos de Entrenamiento
+                        Training Objectives
                     </h3>
                     <ul class="text-xs lg:text-sm text-gray-400 font-mono space-y-2">
-                        <li><span class="text-[#39ff14]">></span> Completar <span class="text-white">20 niveles operacionales</span>.</li>
+                        <li><span class="text-[#39ff14]">></span> Complete <span class="text-white">20 operational levels</span>.</li>
                         <li><span class="text-[#39ff14]">></span> Master Absolute Horizon controls.</li>
-                        <li><span class="text-[#ff6a00]">> NUEVO:</span> Marcado automático de profundidad objetivo.</li>
-                        <li><span class="text-[#39ff14]">></span> Maximizar métricas de velocidad y precisión.</li>
+                        <li><span class="text-[#ff6a00]">> NEW:</span> Automated target depth marking.</li>
+                        <li><span class="text-[#39ff14]">></span> Maximize speed & precision metrics.</li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-[#ff2a2a] font-bold uppercase mb-2 flex items-center text-sm tracking-wider">
                         <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 4.946-3.076 9.168-7.391 10.82a.5.5 0 01-.218 0C6.076 16.168 3 11.946 3 7.001c0-.681.056-1.35.166-2.001zm6.39 5.847a.75.75 0 00-1.06 1.06L9.44 13.85a.75.75 0 001.06 0l3.5-3.5a.75.75 0 10-1.06-1.06L10 12.293 8.556 10.846z" clip-rule="evenodd"></path></svg>
-                        Protocolos de Seguridad
+                        Safety Protocols
                     </h3>
                     <ul class="text-xs lg:text-sm text-gray-400 font-mono space-y-2 text-left">
                         <li><span class="text-[#ff6a00]">[!]</span> Potholing: Standard verification.</li>
@@ -202,11 +211,11 @@
                 </div>
             </div>
 
-            <!-- Tabla de clasificación -->
+            <!-- Leaderboard -->
             <div class="mb-6">
                 <h3 class="text-[#00e5ff] font-bold uppercase mb-3 flex justify-center items-center text-sm tracking-widest glow-text-blue">
                     <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1zm-5 8.274l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L5 10.274zm10 0l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L15 10.274z" clip-rule="evenodd"></path></svg>
-                    Mejores Operadores (Red Global)
+                    Top Operators (Global Network)
                 </h3>
                 <div class="panel-inset rounded-lg overflow-hidden max-h-32 overflow-y-auto font-mono">
                     <table class="w-full text-left leaderboard-table">
@@ -237,6 +246,9 @@
                     <button id="btn-resume" onclick="resumeGame()" class="hidden bg-gradient-to-b from-[#39ff14] to-[#2eb80d] text-black font-black text-xl py-3 px-8 rounded shadow-[0_0_20px_rgba(57,255,20,0.4)] transition transform hover:scale-105 active:scale-95 uppercase text-center border border-[#a6ff99] tracking-widest">
                         Resume
                     </button>
+                    <button onclick="window.exitGame()" class="bg-gradient-to-b from-[#ef4444] to-[#b91c1c] hover:from-[#f87171] hover:to-[#dc2626] text-white font-black text-xl py-3 px-8 rounded shadow-[0_0_20px_rgba(239,68,68,0.4)] transition transform hover:scale-105 active:scale-95 uppercase text-center border border-[#fca5a5] tracking-widest">
+                        Exit
+                    </button>
                 </div>
                 <div class="max-w-2xl text-[10px] text-gray-500 font-mono tracking-tight text-center leading-tight">
                     <p>DISCLAIMER: Simulation for conceptual training only. Physical environment variables omitted. Strictly adhere to OSHA & manufacturer protocols in field operations.</p>
@@ -246,7 +258,7 @@
         </div>
     </div>
 
-    <!-- MODAL DE NIVELES -->
+    <!-- LEVELS MODAL -->
     <div id="levels-modal" class="fixed inset-0 bg-[#05070a] bg-opacity-95 hidden flex-col items-center justify-center z-[120] p-4 text-center backdrop-blur-md">
         <div class="panel-metal p-8 rounded-xl shadow-[0_0_50px_rgba(0,229,255,0.15)] max-w-4xl w-full relative border border-[#00e5ff40]">
             <div class="screw screw-big screw-tl"></div><div class="screw screw-big screw-tr"></div><div class="screw screw-big screw-bl"></div><div class="screw screw-big screw-br"></div>
@@ -262,17 +274,17 @@
         </div>
     </div>
 
-    <!-- ALERTA DE ORIENTACIÓN -->
+    <!-- ORIENTATION WARNING -->
     <div class="portrait:flex landscape:hidden fixed inset-0 bg-[#05070a] z-[110] flex-col items-center justify-center text-center p-6 text-white">
         <svg class="w-32 h-32 mb-6 text-[#ff6a00] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 10V6a2 2-0 012-2h12a2 2-0 012 2v4m-16 4v4a2 2-0 002 2h12a2 2-0 002-2v-4m-16-4h16"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v4m-4-4l4 4 4-4"></path></svg>
         <h2 class="text-4xl font-black text-[#ff6a00] mb-4 tracking-widest uppercase">System Error</h2>
         <p class="text-xl text-[#64748b] font-mono">Horizontal orientation required for dashboard initialization.</p>
     </div>
 
-    <!-- UI PRINCIPAL DEL JUEGO -->
+    <!-- MAIN GAME UI -->
     <div class="portrait:hidden landscape:flex flex-col h-full w-full p-2 lg:p-3 text-center gap-2 bg-[#05070a]">
         
-        <!-- PANEL DE CABECERA -->
+        <!-- HEADER PANEL -->
         <div class="panel-metal rounded-lg p-2 shrink-0 relative flex justify-between items-center text-center z-10 border-t-2 border-t-[#3b4559]">
             <div class="screw screw-tl"></div><div class="screw screw-tr"></div><div class="screw screw-bl"></div><div class="screw screw-br"></div>
             
@@ -291,12 +303,24 @@
                     <svg class="w-6 h-6 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
                 </div>
 
-                <!-- CAJA DE ESTRELLAS -->
+                <!-- LOCATOR TOGGLE BUTTON -->
+                <div id="locator-toggle" onclick="window.toggleLocator()" class="icon-btn text-[#00e5ff] transition-colors duration-300" title="Toggle Locator">
+                    <svg class="w-6 h-6 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="7" stroke-width="2"></circle>
+                        <line x1="12" y1="2" x2="12" y2="22" stroke-width="2"></line>
+                        <line x1="2" y1="12" x2="22" y2="12" stroke-width="2"></line>
+                    </svg>
+                </div>
+
+                <!-- STAR BOX -->
                 <div id="star-box-container" class="flex flex-row items-center bg-[#0a0d14] border border-[#1a2235] px-2 py-1 rounded shadow-[inset_0_0_5px_#000] gap-1 hidden h-8">
                 </div>
 
-                <div id="audio-toggle" onclick="toggleMute()" class="icon-btn" title="Mute/Unmute">
-                    <svg class="w-6 h-6 drop-shadow-md" id="speaker-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M9.383 3.076a1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clip-rule="evenodd"></path></svg>
+                <div id="audio-toggle" onclick="toggleMute()" class="icon-btn transition-colors duration-300" title="Mute/Unmute">
+                    <svg class="w-6 h-6 drop-shadow-md" id="speaker-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    </svg>
                 </div>
                 <div id="fullscreen-toggle" onclick="window.toggleFullScreen()" class="icon-btn" title="Fullscreen">
                     <svg class="w-6 h-6 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
@@ -311,26 +335,26 @@
             </div>
         </div>
 
-        <!-- ÁREA DEL CANVAS -->
+        <!-- CANVAS AREA -->
         <div class="panel-metal flex-grow min-h-0 w-full rounded-lg p-1.5 relative flex flex-col z-10">
 
-            <!-- CONTROLES DE ZOOM FLOTANTES -->
+            <!-- FLOATING ZOOM CONTROLS -->
             <div id="zoom-controls" class="absolute bottom-6 left-4 flex flex-col space-y-2 z-20">
                 <button onclick="window.zoomIn()" class="panel-metal text-white font-black text-xl w-10 h-10 rounded hover:brightness-125 active:scale-95 transition border-[#3b4559] flex items-center justify-center pb-1">+</button>
                 <button onclick="window.resetZoom()" class="panel-metal text-[#00e5ff] font-bold text-[10px] w-10 h-10 rounded hover:brightness-125 active:scale-95 transition border-[#3b4559]">FIT</button>
                 <button onclick="window.zoomOut()" class="panel-metal text-white font-black text-xl w-10 h-10 rounded hover:brightness-125 active:scale-95 transition border-[#3b4559] flex items-center justify-center pb-1">-</button>
             </div>
 
-            <!-- BOTÓN LOG (ABRE MODAL) -->
+            <!-- LOG BUTTON (OPENS MODAL) -->
             <button onclick="window.openLogModal()" class="absolute bottom-6 left-[64px] panel-metal text-[#00e5ff] font-bold text-[9px] w-12 h-10 rounded hover:brightness-125 active:scale-95 transition border-[#3b4559] flex flex-col items-center justify-center z-20 shadow-lg">
                 <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
                 LOG
             </button>
 
-            <!-- CONTENEDOR DE CANVAS DIVIDIDO -->
+            <!-- SPLIT CANVAS CONTAINER -->
             <div id="canvas-wrapper" class="relative w-full h-full panel-inset rounded overflow-hidden flex flex-col gap-[2px] bg-[#1a2235]">
                 
-                <!-- HUD DINÁMICO CENTRAL (MOVIMIENTO) -->
+                <!-- DYNAMIC CENTER HUD (MOVEMENT) -->
                 <div id="moving-hud" class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 flex items-center bg-black/60 backdrop-blur-sm border border-[#1a2235] px-4 py-1.5 rounded-full pointer-events-none gap-6 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
                     <div class="flex items-center gap-2">
                         <span class="text-[10px] text-[#64748b] font-bold uppercase tracking-widest">Depth</span>
@@ -342,37 +366,37 @@
                     </div>
                 </div>
 
-                <!-- VISTA LATERAL (PROFILE) -->
+                <!-- SIDE VIEW (PROFILE) -->
                 <div class="relative w-full h-1/2 bg-[#05070a]">
-                    <div class="absolute top-2 left-2 px-2 py-1 bg-[#05070a]/80 text-[#00e5ff] text-[9px] font-mono rounded border border-[#00e5ff]/30 z-10 pointer-events-none tracking-widest shadow-[0_0_10px_rgba(0,229,255,0.1)]">MAIN FEED [PROFILE]</div>
+                    <div class="absolute bottom-2 right-2 px-2 py-1 bg-[#05070a]/80 text-[#00e5ff] text-[9px] font-mono rounded border border-[#00e5ff]/30 z-10 pointer-events-none tracking-widest shadow-[0_0_10px_rgba(0,229,255,0.1)]">MAIN FEED [PROFILE]</div>
                     <canvas id="game-canvas-side" width="1200" height="200" class="w-full h-full object-contain touch-none"></canvas>
                 </div>
                 
-                <!-- VISTA AÉREA (TOP) -->
+                <!-- AERIAL VIEW (TOP) -->
                 <div class="relative w-full h-1/2 bg-[#05070a]">
-                    <div class="absolute top-2 left-2 px-2 py-1 bg-[#05070a]/80 text-[#39ff14] text-[9px] font-mono rounded border border-[#39ff14]/30 z-10 pointer-events-none tracking-widest shadow-[0_0_10px_rgba(57,255,20,0.1)]">AERIAL FEED [TOP]</div>
+                    <div class="absolute bottom-2 right-2 px-2 py-1 bg-[#05070a]/80 text-[#39ff14] text-[9px] font-mono rounded border border-[#39ff14]/30 z-10 pointer-events-none tracking-widest shadow-[0_0_10px_rgba(57,255,20,0.1)]">AERIAL FEED [TOP]</div>
                     <canvas id="game-canvas-top" width="1200" height="200" class="w-full h-full object-contain touch-none"></canvas>
                 </div>
 
             </div>
         </div>
 
-        <!-- PANEL DE CONTROLES -->
+        <!-- CONTROLS PANEL -->
         <div class="panel-metal p-2 lg:p-3 rounded-lg shrink-0 relative z-10 border-t-2 border-t-[#3b4559]">
             <div id="error-msg" class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-[#ff2a2a] text-white font-bold text-sm px-6 py-2 rounded shadow-[0_0_15px_#ff2a2a] hidden z-50 mb-2 border border-[#ffa0a0] uppercase tracking-widest font-mono">SYS ERR</div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-2 lg:gap-4 h-full relative z-10">
-                <!-- Clock & HUD / Orientación -->
+                <!-- Clock & HUD / Orientation -->
                 <div class="flex flex-row items-center justify-center shrink-0 border-b md:border-b-0 md:border-r border-[#2a3241] pb-2 md:pb-0 relative w-full">
                     
                     <div class="flex flex-row items-end justify-center gap-4 lg:gap-8 relative z-10 w-full md:px-0">
-                        <!-- RELOJ (TOOL FACE) -->
+                        <!-- CLOCK (TOOL FACE) -->
                         <div class="flex flex-col items-center relative -left-2">
                             <h3 class="text-[10px] lg:text-[11px] mb-2 text-[#64748b] font-bold uppercase tracking-widest">Tool Face</h3>
                             <div id="clock-container" class="relative w-24 h-24 lg:w-[115px] lg:h-[115px] shrink-0 rounded-full panel-inset aspect-square shadow-[inset_0_0_15px_#000,0_0_5px_rgba(0,229,255,0.1)] border-[#00e5ff]/20"></div>
                         </div>
 
-                        <!-- TELEMETRÍA HUD -->
+                        <!-- TELEMETRY HUD -->
                         <div class="flex flex-col items-center">
                             <h3 class="text-[10px] lg:text-[11px] mb-2 text-[#64748b] font-bold uppercase tracking-widest">Telemetry</h3>
                             <div class="flex flex-col justify-center panel-inset p-2 lg:p-3 rounded border border-[#1a2235] shadow-[inset_0_0_10px_rgba(0,0,0,0.8)] w-32 lg:w-40 h-20 lg:h-24">
@@ -397,7 +421,7 @@
                     </div>
                 </div>
 
-                <!-- Potencia y Varillas -->
+                <!-- Power & Rods -->
                 <div class="flex flex-col items-center justify-center px-4 border-b md:border-b-0 md:border-r border-[#2a3241] pb-2 md:pb-0 relative">
                     
                     <div class="bg-[#05070a] border border-[#1a2235] px-3 py-0.5 rounded text-[8px] lg:text-[9px] font-mono text-[#00e5ff] tracking-widest uppercase mb-1.5 shadow-[inset_0_0_5px_rgba(0,0,0,0.5)]">
@@ -428,7 +452,7 @@
                     </div>
                 </div>
 
-                <!-- Steering & Empuje -->
+                <!-- Steering & Thrust -->
                 <div class="flex flex-col justify-center pt-2 md:pt-0 pl-2">
                     <div class="flex justify-between items-end mb-2.5 w-full pr-2">
                         <h3 class="text-xs lg:text-sm text-[#00e5ff] font-bold uppercase tracking-widest">Thrust Controls</h3>
@@ -473,9 +497,9 @@
         </div>
     </div>
 
-    <!-- MODAL DE FIN DE JUEGO -->
+    <!-- GAME OVER MODAL -->
     <div id="game-over-modal" class="absolute inset-0 bg-[#05070a] bg-opacity-95 hidden flex-col items-center justify-center z-[150] backdrop-blur-md text-center">
-        <div class="panel-metal border border-[#00e5ff40] p-8 rounded-xl shadow-[0_0_50px_rgba(0,229,255,0.15)] max-w-xl w-full flex flex-col items-center mx-4 text-white relative">
+        <div class="panel-metal border border-[#00e5ff40] p-8 rounded-xl shadow-[0_0_50px_rgba(0,229,255,0.1)] max-w-xl w-full flex flex-col items-center mx-4 text-white relative">
             <div class="screw screw-big screw-tl"></div><div class="screw screw-big screw-tr"></div><div class="screw screw-big screw-bl"></div><div class="screw screw-big screw-br"></div>
             
             <h2 id="game-over-title" class="text-2xl lg:text-4xl font-black mb-3 text-center uppercase tracking-widest"></h2>
@@ -497,6 +521,9 @@
             </div>
             
             <div class="flex flex-wrap justify-center gap-4 relative z-10 w-full">
+                <button id="btn-report" onclick="window.generarInformeFinal()" class="flex-1 bg-[#1a2235] hover:bg-[#2a3241] text-[#00e5ff] font-bold py-3 px-6 rounded transition uppercase text-sm border border-[#00e5ff]/30 tracking-widest">
+                    Data Log
+                </button>
                 <button id="btn-retry" onclick="window.reiniciarJuego()" class="flex-1 bg-gradient-to-b from-[#f59e0b] to-[#b45309] hover:from-[#fbbf24] hover:to-[#d97706] text-black font-black py-3 px-6 rounded transition uppercase text-sm shadow-[0_0_15px_rgba(245,158,11,0.3)] tracking-widest">
                     Restart
                 </button>
@@ -506,6 +533,85 @@
                 <button onclick="window.volverAlMenu()" class="bg-transparent hover:bg-[#1a2235] text-[#64748b] font-bold py-3 px-6 rounded transition uppercase text-sm border border-[#3b4559] tracking-widest">
                     Exit
                 </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- REPORT MODAL -->
+    <div id="report-modal" class="absolute inset-0 bg-[#05070a] bg-opacity-95 hidden flex-col items-center justify-center z-[160] p-4 text-center backdrop-blur-md">
+        <div class="panel-metal p-2 rounded-lg w-full max-w-6xl overflow-auto flex flex-col text-center h-full relative border border-[#00e5ff40]">
+            <div class="screw screw-tl"></div><div class="screw screw-tr"></div><div class="screw screw-bl"></div><div class="screw screw-br"></div>
+            
+            <div class="flex justify-between items-center bg-[#0a0d14] p-3 mb-2 rounded border border-[#1a2235] z-10">
+                <h2 class="text-[#00e5ff] font-black text-xl uppercase tracking-widest glow-text-blue">Post-Op Telemetry</h2>
+                <div class="flex space-x-3">
+                    <button id="btn-report-view" onclick="window.toggleReportView()" class="bg-[#1a2235] hover:bg-[#2a3241] text-white font-bold px-5 py-1.5 rounded text-xs uppercase border border-[#3b4559] tracking-widest transition">VIEW: MAIN</button>
+                    <button onclick="window.cerrarInforme()" class="bg-[#ff2a2a]/10 hover:bg-[#ff2a2a]/20 text-[#ff2a2a] font-bold px-5 py-1.5 rounded text-xs border border-[#ff2a2a]/50 tracking-widest transition">CLOSE</button>
+                </div>
+            </div>
+            
+            <div id="report-container" class="flex-grow flex flex-col lg:flex-row items-stretch justify-center p-2 gap-4 relative z-10">
+                <div class="w-full lg:w-3/4 flex justify-center h-full relative overflow-hidden panel-inset rounded border border-[#1a2235]">
+                    <canvas id="report-canvas" width="1200" height="400" class="w-full h-full object-contain"></canvas>
+                </div>
+                
+                <div class="w-full lg:w-1/4 bg-[#0a0d14] p-5 rounded-lg flex flex-col text-left h-full overflow-y-auto border border-[#1a2235]">
+                    <h3 class="text-[#64748b] font-bold uppercase tracking-widest mb-4 border-b border-[#2a3241] pb-2 text-center text-sm">Operation Metrics</h3>
+                    
+                    <div class="space-y-5 text-sm">
+                        <div class="text-center bg-[#05070a] p-3 rounded border border-[#1a2235]">
+                            <p class="text-[#64748b] uppercase text-[10px] tracking-widest mb-1">Total Duration</p>
+                            <p class="text-3xl font-mono font-bold text-[#00e5ff] glow-text-blue" id="report-time">00:00</p>
+                        </div>
+                        
+                        <div>
+                            <p class="text-[#64748b] uppercase text-[10px] tracking-widest mb-2 border-b border-[#1a2235] pb-1">Rotation Actions</p>
+                            <div class="grid grid-cols-3 gap-2 text-[#39ff14] font-mono text-center text-xs">
+                                <div class="bg-[#05070a] p-1.5 rounded"><span class="text-[#475569] block text-[9px]">1/4</span> <span id="metric-d14">0</span></div>
+                                <div class="bg-[#05070a] p-1.5 rounded"><span class="text-[#475569] block text-[9px]">1/2</span> <span id="metric-d12">0</span></div>
+                                <div class="bg-[#05070a] p-1.5 rounded"><span class="text-[#475569] block text-[9px]">FULL</span> <span id="metric-df">0</span></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p class="text-[#64748b] uppercase text-[10px] tracking-widest mb-2 border-b border-[#1a2235] pb-1">Thrust Actions</p>
+                            <div class="grid grid-cols-3 gap-2 text-[#ff6a00] font-mono text-center text-xs">
+                                <div class="bg-[#05070a] p-1.5 rounded"><span class="text-[#475569] block text-[9px]">1/4</span> <span id="metric-p14">0</span></div>
+                                <div class="bg-[#05070a] p-1.5 rounded"><span class="text-[#475569] block text-[9px]">1/2</span> <span id="metric-p12">0</span></div>
+                                <div class="bg-[#05070a] p-1.5 rounded"><span class="text-[#475569] block text-[9px]">FULL</span> <span id="metric-pf">0</span></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p class="text-[#64748b] uppercase text-[10px] tracking-widest mb-2 border-b border-[#1a2235] pb-1">Retraction / Pipe</p>
+                            <div class="grid grid-cols-2 gap-2 font-mono text-center text-xs">
+                                <div class="bg-[#05070a] p-1.5 rounded text-[#e2e8f0]"><span class="text-[#475569] block text-[9px]">PULLS</span> <span id="metric-b">0</span></div>
+                                <div class="bg-[#05070a] p-1.5 rounded text-[#e2e8f0]"><span class="text-[#475569] block text-[9px]">RODS</span> <span id="metric-rods">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOG MODAL -->
+    <div id="log-modal" class="fixed inset-0 bg-[#05070a] bg-opacity-95 hidden flex-col items-center justify-center z-[160] p-4 text-center backdrop-blur-md">
+        <div class="panel-metal p-6 lg:p-8 rounded-xl shadow-[0_0_50px_rgba(0,229,255,0.15)] max-w-5xl w-full max-h-[85vh] flex flex-col relative border border-[#00e5ff40]">
+            <div class="screw screw-big screw-tl"></div><div class="screw screw-big screw-tr"></div><div class="screw screw-big screw-bl"></div><div class="screw screw-big screw-br"></div>
+
+            <div class="flex justify-between items-center bg-[#0a0d14] p-3 mb-4 rounded border border-[#1a2235] z-10 shrink-0">
+                <h2 class="text-[#00e5ff] font-black text-xl uppercase tracking-widest glow-text-blue flex items-center">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                    FULL PIPE LOG
+                </h2>
+                <button onclick="window.closeLogModal()" class="bg-[#ff2a2a]/10 hover:bg-[#ff2a2a]/20 text-[#ff2a2a] font-bold px-6 py-2 rounded text-xs border border-[#ff2a2a]/50 tracking-widest transition">CLOSE</button>
+            </div>
+
+            <div class="flex-grow overflow-y-auto bg-[#05070a] rounded-lg border border-[#1a2235] p-4">
+                <ul id="full-log-list" class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-3 font-mono text-[11px] lg:text-xs text-[#39ff14] text-center w-full">
+                    <!-- Logs injected dynamically here -->
+                </ul>
             </div>
         </div>
     </div>
@@ -528,12 +634,83 @@
         
         let state = {
             level: 1, distance: 0, absElevation: 0, lat: 0, pitch: -24, latAngle: 0, clock: 12, steeringForce: 12, rods: 0, maxRodLength: 10, path: [], targetDistance: 100, targetDepth: 3.0, targetLat: 0.0, runawayWidth: 3.0, maxAllowedDepthRel: 7.0, gameOver: false, errors: [], potholesVisited: [], surfacePoints: [], utilities: [],
-            locator: null,
+            locator: null, showLocator: true,
             metrics: { d14: 0, d12: 0, df: 0, p14: 0, p12: 0, pf: 0, back: 0 },
             startTime: 0, endTime: 0, timerInterval: null, timeElapsed: 0
         };
 
-        let audioCtx = null, engineOsc = null, engineGain = null, musicGain = null, isMuted = false, isAnimating = false, animationData = null;
+        let audioCtx = null, engineOsc = null, engineGain = null, musicGain = null, introAudioCtx = null, isMuted = false, isAnimating = false, animationData = null;
+
+        window.initializeSystem = function() {
+            const overlay = document.getElementById('init-overlay');
+            if(overlay) overlay.style.display = 'none';
+            
+            try {
+                introAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                let startTime = introAudioCtx.currentTime;
+                
+                // Emotive melody (C major -> F major chords)
+                const chords = [
+                    [130.81, 261.63, 329.63, 392.00], // C3, C4, E4, G4
+                    [174.61, 261.63, 349.23, 440.00]  // F3, C4, F4, A4
+                ];
+                
+                chords.forEach((chord, chordIndex) => {
+                    let chordTime = startTime + (chordIndex * 2.5);
+                    chord.forEach(freq => {
+                        let osc1 = introAudioCtx.createOscillator();
+                        let osc2 = introAudioCtx.createOscillator();
+                        let gain = introAudioCtx.createGain();
+                        
+                        osc1.type = 'sine';
+                        osc2.type = 'triangle';
+                        osc1.frequency.value = freq;
+                        osc2.frequency.value = freq * 1.005; // Slight detuning for "pad" effect
+                        
+                        gain.gain.setValueAtTime(0, chordTime);
+                        gain.gain.linearRampToValueAtTime(0.15, chordTime + 1.0);
+                        gain.gain.exponentialRampToValueAtTime(0.001, chordTime + 2.5);
+                        
+                        osc1.connect(gain);
+                        osc2.connect(gain);
+                        gain.connect(introAudioCtx.destination);
+                        
+                        osc1.start(chordTime);
+                        osc2.start(chordTime);
+                        osc1.stop(chordTime + 2.5);
+                        osc2.stop(chordTime + 2.5);
+                    });
+                });
+                
+                // Engine start (after 5 seconds)
+                let engTime = startTime + 5.0;
+                let engOsc = introAudioCtx.createOscillator();
+                let engGain = introAudioCtx.createGain();
+                let filter = introAudioCtx.createBiquadFilter();
+                
+                engOsc.type = 'sawtooth';
+                engOsc.frequency.setValueAtTime(2, engTime); // Starts slow like a starter motor
+                engOsc.frequency.exponentialRampToValueAtTime(60, engTime + 2.0); // Ramps up to idle speed
+                
+                filter.type = 'lowpass';
+                filter.frequency.setValueAtTime(100, engTime);
+                filter.frequency.linearRampToValueAtTime(300, engTime + 2.0);
+                
+                engGain.gain.setValueAtTime(0, engTime);
+                engGain.gain.linearRampToValueAtTime(0.6, engTime + 0.5);
+                engGain.gain.exponentialRampToValueAtTime(0.001, engTime + 4.0);
+                
+                engOsc.connect(filter);
+                filter.connect(engGain);
+                engGain.connect(introAudioCtx.destination);
+                
+                engOsc.start(engTime);
+                engOsc.stop(engTime + 4.0);
+                
+            } catch(e) {
+                console.warn("Audio could not be initialized", e);
+            }
+        };
 
         window.obtenerProgreso = function() {
             let saved = localStorage.getItem('hdd_progress');
@@ -671,17 +848,70 @@
         window.initAudio = function() {
             if (audioCtx) return;
             try {
-                audioCtx = new (window.AudioContext || window.webkitAudioContext)(); engineGain = audioCtx.createGain(); engineGain.gain.setValueAtTime(isMuted ? 0 : 0.03, audioCtx.currentTime); engineGain.connect(audioCtx.destination);
-                musicGain = audioCtx.createGain(); musicGain.gain.setValueAtTime(isMuted ? 0 : 0.10, audioCtx.currentTime); musicGain.connect(audioCtx.destination);
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)(); engineGain = audioCtx.createGain(); engineGain.gain.setValueAtTime(isMuted ? 0 : 0.15, audioCtx.currentTime); engineGain.connect(audioCtx.destination);
+                musicGain = audioCtx.createGain(); musicGain.gain.setValueAtTime(isMuted ? 0 : 0.50, audioCtx.currentTime); musicGain.connect(audioCtx.destination);
                 engineOsc = audioCtx.createOscillator(); engineOsc.type = 'sawtooth'; engineOsc.frequency.setValueAtTime(35, audioCtx.currentTime);
                 let f = audioCtx.createBiquadFilter(); f.type = 'lowpass'; f.frequency.setValueAtTime(150, audioCtx.currentTime); engineOsc.connect(f); f.connect(engineGain); engineOsc.start(); startDynamicActionMusic();
-            } catch(e) { console.warn(e); }
+            } catch(e) { console.warn("Audio could not be initialized", e); }
         };
-        function startDynamicActionMusic() { const heroicNotes = [110, 130.81, 146.83, 164.81, 196, 220, 196, 164.81]; let step = 0; function loop() { if (!audioCtx) return; if (isMuted || audioCtx.state === 'suspended') { setTimeout(loop, 250); return; } let dur = 60 / (110 + state.level * 2); let b = audioCtx.createOscillator(); let g1 = audioCtx.createGain(); b.type = 'triangle'; b.frequency.setValueAtTime(heroicNotes[step % 4] / 2, audioCtx.currentTime); g1.gain.setValueAtTime(0.12, audioCtx.currentTime); g1.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur); b.connect(g1); g1.connect(musicGain); b.start(); b.stop(audioCtx.currentTime + dur); let l = audioCtx.createOscillator(); let g2 = audioCtx.createGain(); l.type = 'sawtooth'; l.frequency.setValueAtTime(heroicNotes[step % heroicNotes.length], audioCtx.currentTime); g2.gain.setValueAtTime(0.08, audioCtx.currentTime); g2.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur); l.connect(g2); g2.connect(musicGain); l.start(); l.stop(audioCtx.currentTime + dur); step++; setTimeout(loop, dur * 1000); } loop(); }
-        function setEnginePitch(f, v = 0.03) { if (!audioCtx || isMuted) return; engineOsc.frequency.exponentialRampToValueAtTime(f, audioCtx.currentTime + 0.5); engineGain.gain.linearRampToValueAtTime(Math.min(v, 0.08), audioCtx.currentTime + 0.2); }
-        function playSound(f, t, d, v = 0.15) { if (!audioCtx || isMuted) return; let o = audioCtx.createOscillator(); let g = audioCtx.createGain(); o.type = t; o.frequency.setValueAtTime(f, audioCtx.currentTime); g.gain.setValueAtTime(v, audioCtx.currentTime); g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + d); o.connect(g); g.connect(audioCtx.destination); o.start(); o.stop(audioCtx.currentTime + d); }
-        window.playSuccessChime = function() { if (!audioCtx || isMuted) return; let o1 = audioCtx.createOscillator(); let g1 = audioCtx.createGain(); o1.type = 'sine'; o1.frequency.setValueAtTime(523.25, audioCtx.currentTime); g1.gain.setValueAtTime(0, audioCtx.currentTime); g1.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + 0.05); g1.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.2); o1.connect(g1); g1.connect(audioCtx.destination); o1.start(); o1.stop(audioCtx.currentTime + 0.2); let o2 = audioCtx.createOscillator(); let g2 = audioCtx.createGain(); o2.type = 'sine'; o2.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.1); g2.gain.setValueAtTime(0, audioCtx.currentTime + 0.1); g2.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + 0.15); g2.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.6); o2.connect(g2); g2.connect(audioCtx.destination); o2.start(audioCtx.currentTime + 0.1); o2.stop(audioCtx.currentTime + 0.6); };
-        window.toggleMute = function() { isMuted = !isMuted; const icon = document.getElementById('speaker-icon'); if (isMuted) { icon.innerHTML = '<path d="M3.707 2.293a1 1 0 00-1.414 1.414l14 14a1 1 0 001.414-1.414l-1.473-1.473A10.014 10.014 0 0019 10a9.972 9.972 0 00-2.929-7.071 1 1 0 01-1.414 1.414A7.971 7.971 0 0117 10c0 1.282-.303 2.493-.842 3.572l-1.436-1.436a5.98 5.98 0 00.278-2.136 5.984 5.984 0 00-1.757-4.243 1 1 0 011.415-1.415A3.984 3.984 0 0113 10a3.983 3.983 0 01-.172 1.172l-1.445-1.445A1.984 1.984 0 0011 10a1.984 1.984 0 00-.586-1.414l-3-3a1.984 1.984 0 00-1.414-.586V4a1 1 0 011.707-.707L9.383 7.001l1.414 1.414L18.414 16.03l-1.414 1.414L15.352 15.8l-1.414-1.414-4.555-4.555-3.676-3.676L3.707 2.293z"/>'; if (engineGain) engineGain.gain.setValueAtTime(0, audioCtx.currentTime); if (musicGain) musicGain.gain.setValueAtTime(0, audioCtx.currentTime); } else { icon.innerHTML = '<path fill-rule="evenodd" d="M9.383 3.076a1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clip-rule="evenodd"></path>'; if (engineGain) engineGain.gain.setValueAtTime(0.03, audioCtx.currentTime); if (musicGain) musicGain.gain.setValueAtTime(0.10, audioCtx.currentTime); } };
+        function startDynamicActionMusic() { const heroicNotes = [110, 130.81, 146.83, 164.81, 196, 220, 196, 164.81]; let step = 0; function loop() { if (!audioCtx) return; if (isMuted || audioCtx.state === 'suspended') { setTimeout(loop, 250); return; } let dur = 60 / (110 + state.level * 2); let b = audioCtx.createOscillator(); let g1 = audioCtx.createGain(); b.type = 'triangle'; b.frequency.setValueAtTime(heroicNotes[step % 4] / 2, audioCtx.currentTime); g1.gain.setValueAtTime(0.40, audioCtx.currentTime); g1.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur); b.connect(g1); g1.connect(musicGain); b.start(); b.stop(audioCtx.currentTime + dur); let l = audioCtx.createOscillator(); let g2 = audioCtx.createGain(); l.type = 'sawtooth'; l.frequency.setValueAtTime(heroicNotes[step % heroicNotes.length], audioCtx.currentTime); g2.gain.setValueAtTime(0.25, audioCtx.currentTime); g2.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur); l.connect(g2); g2.connect(musicGain); l.start(); l.stop(audioCtx.currentTime + dur); step++; setTimeout(loop, dur * 1000); } loop(); }
+        function setEnginePitch(f, v = 0.15) { if (!audioCtx || isMuted) return; engineOsc.frequency.exponentialRampToValueAtTime(f, audioCtx.currentTime + 0.5); engineGain.gain.linearRampToValueAtTime(Math.min(v, 0.40), audioCtx.currentTime + 0.2); }
+        function playSound(f, t, d, v = 0.40) { if (!audioCtx || isMuted) return; let o = audioCtx.createOscillator(); let g = audioCtx.createGain(); o.type = t; o.frequency.setValueAtTime(f, audioCtx.currentTime); g.gain.setValueAtTime(v, audioCtx.currentTime); g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + d); o.connect(g); g.connect(audioCtx.destination); o.start(); o.stop(audioCtx.currentTime + d); }
+        window.playSuccessChime = function() { if (!audioCtx || isMuted) return; let o1 = audioCtx.createOscillator(); let g1 = audioCtx.createGain(); o1.type = 'sine'; o1.frequency.setValueAtTime(523.25, audioCtx.currentTime); g1.gain.setValueAtTime(0, audioCtx.currentTime); g1.gain.linearRampToValueAtTime(0.40, audioCtx.currentTime + 0.05); g1.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.2); o1.connect(g1); g1.connect(audioCtx.destination); o1.start(); o1.stop(audioCtx.currentTime + 0.2); let o2 = audioCtx.createOscillator(); let g2 = audioCtx.createGain(); o2.type = 'sine'; o2.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.1); g2.gain.setValueAtTime(0, audioCtx.currentTime + 0.1); g2.gain.linearRampToValueAtTime(0.40, audioCtx.currentTime + 0.15); g2.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.6); o2.connect(g2); g2.connect(audioCtx.destination); o2.start(audioCtx.currentTime + 0.1); o2.stop(audioCtx.currentTime + 0.6); };
+        
+        window.playLoseStarSound = function() { 
+            if (!audioCtx || isMuted) return; 
+            let o = audioCtx.createOscillator(); 
+            let g = audioCtx.createGain(); 
+            o.type = 'square'; 
+            o.frequency.setValueAtTime(150, audioCtx.currentTime); 
+            o.frequency.exponentialRampToValueAtTime(50, audioCtx.currentTime + 0.3); 
+            g.gain.setValueAtTime(0.40, audioCtx.currentTime); 
+            g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.3); 
+            o.connect(g); 
+            g.connect(audioCtx.destination); 
+            o.start(); 
+            o.stop(audioCtx.currentTime + 0.3); 
+        };
+
+        window.playGameOverSound = function() { 
+            if (!audioCtx || isMuted) return; 
+            let o = audioCtx.createOscillator(); 
+            let g = audioCtx.createGain(); 
+            o.type = 'sawtooth'; 
+            // Frequency dropping sharply simulating shutdown/failure
+            o.frequency.setValueAtTime(200, audioCtx.currentTime); 
+            o.frequency.exponentialRampToValueAtTime(10, audioCtx.currentTime + 1.2); 
+            // Volume slightly higher than background music
+            g.gain.setValueAtTime(0.60, audioCtx.currentTime); 
+            g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1.2); 
+            o.connect(g); 
+            g.connect(audioCtx.destination); 
+            o.start(); 
+            o.stop(audioCtx.currentTime + 1.2); 
+        };
+
+        window.toggleMute = function() { 
+            isMuted = !isMuted; 
+            const icon = document.getElementById('speaker-icon'); 
+            const toggleDiv = document.getElementById('audio-toggle');
+            
+            if (isMuted) { 
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5L6 9H2v6h4l5 4V5z"></path><line stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="23" y1="9" x2="17" y2="15"></line><line stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="17" y1="9" x2="23" y2="15"></line>'; 
+                toggleDiv.classList.add('text-[#ff2a2a]');
+                toggleDiv.classList.remove('text-[#64748b]', 'hover:text-[#00e5ff]');
+                
+                if (engineGain) engineGain.gain.setValueAtTime(0, audioCtx.currentTime); 
+                if (musicGain) musicGain.gain.setValueAtTime(0, audioCtx.currentTime); 
+            } else { 
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5L6 9H2v6h4l5 4V5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>'; 
+                toggleDiv.classList.remove('text-[#ff2a2a]');
+                toggleDiv.classList.add('text-[#64748b]', 'hover:text-[#00e5ff]');
+                
+                if (engineGain) engineGain.gain.setValueAtTime(0.15, audioCtx.currentTime); 
+                if (musicGain) musicGain.gain.setValueAtTime(0.50, audioCtx.currentTime); 
+            } 
+        };
 
         function formatPiesPulgadas(decimalFeet) { let isNegative = decimalFeet < 0; let absFeet = Math.abs(decimalFeet); let feet = Math.floor(absFeet); let inches = Math.round((absFeet - feet) * 12); if (inches === 12) { feet += 1; inches = 0; } return (isNegative ? "-" : "") + feet + "." + inches; }
         function formatRodLog(decimalFeet) { let isNegative = decimalFeet < 0; let absFeet = Math.abs(decimalFeet); let feet = Math.floor(absFeet); let inches = Math.round((absFeet - feet) * 12); if (inches === 12) { feet += 1; inches = 0; } if (inches === 0) return (isNegative ? "-" : "") + feet + "ft"; return (isNegative ? "-" : "") + feet + "'" + inches + '"'; }
@@ -695,6 +925,26 @@
         window.cambiarLongitudVarilla = function(val) { let num = parseInt(val); let remaining = state.distance % state.maxRodLength; if (state.distance > 0 && remaining > 0.01 && remaining < state.maxRodLength - 0.01) { mostrarError("Finish the rod first!"); document.getElementById('rod-length-select').value = state.maxRodLength; return; } state.maxRodLength = num; window.limpiarFuerza(); };
         window.volverAlMenu = function() { document.getElementById('splash-screen').style.display = 'flex'; document.getElementById('btn-resume').classList.remove('hidden'); document.getElementById('game-over-modal').classList.add('hidden'); if (audioCtx && audioCtx.state === 'running') audioCtx.suspend(); if (window.cargarLeaderboard) window.cargarLeaderboard(); };
         window.resumeGame = function() { document.getElementById('splash-screen').style.display = 'none'; if (audioCtx && audioCtx.state === 'suspended' && !isMuted) audioCtx.resume(); };
+        
+        window.exitGame = function() { 
+            window.close(); 
+            // Fallback in case the browser blocks window.close()
+            document.body.innerHTML = '<div class="h-screen w-screen bg-black flex items-center justify-center text-[#ff2a2a] font-mono text-2xl lg:text-4xl tracking-widest uppercase">Simulation Terminated</div>'; 
+        };
+
+        window.toggleLocator = function() {
+            state.showLocator = !state.showLocator;
+            const icon = document.getElementById('locator-toggle');
+            if (state.showLocator) {
+                icon.classList.remove('text-[#64748b]');
+                icon.classList.add('text-[#00e5ff]');
+            } else {
+                icon.classList.remove('text-[#00e5ff]');
+                icon.classList.add('text-[#64748b]');
+            }
+            dibujarEscena();
+        };
+
         function updateTimerDisplay() { if(state.gameOver) return; state.timeElapsed = Math.floor((Date.now() - state.startTime) / 1000); let m = Math.floor(state.timeElapsed / 60); let s = state.timeElapsed % 60; document.getElementById('time-display').innerText = `T-MINUS ${(m < 10 ? "0"+m : m)}:${(s < 10 ? "0"+s : s)}`; }
 
         function dibujarRadarRadar(tCtx, w, h) {
@@ -707,11 +957,11 @@
             
             tCtx.beginPath(); tCtx.strokeStyle = 'rgba(0, 229, 255, 0.2)'; tCtx.lineWidth = 1; 
             tCtx.moveTo(rX + rW/2, rY); tCtx.lineTo(rX + rW/2, rY + rH); 
-            tCtx.moveTo(rX, rY + h / 2); tCtx.lineTo(rX + w, rY + h / 2); 
+            tCtx.moveTo(rX, rY + rH / 2); tCtx.lineTo(rX + rW, rY + rH / 2); 
             tCtx.stroke(); 
             
             tCtx.beginPath(); tCtx.strokeStyle = 'rgba(57, 255, 20, 0.4)'; tCtx.lineWidth = 1; 
-            tCtx.moveTo(rX, rY + h - 20); tCtx.lineTo(rX + rW, rY + h - 20); tCtx.stroke(); 
+            tCtx.moveTo(rX, rY + rH - 20); tCtx.lineTo(rX + rW, rY + rH - 20); tCtx.stroke(); 
 
             tCtx.fillStyle = 'rgba(0, 229, 255, 0.5)'; tCtx.font = '9px "Share Tech Mono"'; tCtx.fillText("PORT", rX + 4, rY + rH - 24); tCtx.fillText("STBD", rX + rW - 24, rY + rH - 24); 
             
@@ -719,7 +969,7 @@
             tCtx.beginPath(); tCtx.arc(hX, hY, 3, 0, Math.PI*2); tCtx.fillStyle = '#ff6a00'; 
             tCtx.shadowColor = '#ff6a00'; tCtx.shadowBlur = 8; tCtx.fill(); tCtx.shadowBlur = 0;
             
-            if (state.locator) { 
+            if (state.locator && state.showLocator) { 
                 let locX = getRadarX(state.locator.lat, rX, rW), locY = getRadarY(state.locator.dist, rY, rH); 
                 tCtx.beginPath(); tCtx.arc(locX, locY, 2.5, 0, Math.PI*2); tCtx.fillStyle = '#0284c7'; tCtx.fill(); 
                 tCtx.beginPath(); tCtx.strokeStyle = '#0284c7'; tCtx.lineWidth = 1; 
@@ -756,11 +1006,14 @@
         }
         
         function verificarEstrellas() { 
-            const thresholdDist = 4.0; 
-            const thresholdLat = 3.5; 
+            // We significantly expand the thresholds (tolerance)
+            // to ensure it always registers when you pass through the utility crossing zone.
+            const thresholdDist = 4.0; // +/- 4 feet tolerance along the length
+            const thresholdLat = 3.5;  // +/- 3.5 feet lateral tolerance
 
             let actualizadas = false;
 
+            // 1. Activate star if it enters the pothole zone
             state.utilities.forEach(u => { 
                 if (Math.abs(state.distance - u.dist) <= thresholdDist && 
                     Math.abs(state.lat - u.lat) <= thresholdLat) { 
@@ -772,14 +1025,21 @@
                 } 
             }); 
 
+            // 2. Deactivate star if the rod retracts before the pothole zone
             let originalLength = state.potholesVisited.length;
+            let perdidas = false;
             state.potholesVisited = state.potholesVisited.filter(id => {
                 let u = state.utilities.find(util => util.id === id);
                 if (u && state.distance < (u.dist - thresholdDist)) {
+                    perdidas = true;
                     return false; 
                 }
                 return true; 
             });
+
+            if (perdidas && window.playLoseStarSound) {
+                window.playLoseStarSound();
+            }
 
             if (actualizadas || originalLength !== state.potholesVisited.length) {
                 window.actualizarEstrellas();
@@ -803,8 +1063,13 @@
             }
 
             container.innerHTML = '';
+            let isLight = document.body.classList.contains('light-mode');
+
             for (let i = 0; i < total; i++) {
-                let isCollected = i < recogidas;
+                // Modification: The star is linked to the specific pothole ID
+                let u = state.utilities[i];
+                let isCollected = state.potholesVisited.includes(u.id);
+                
                 let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
                 svg.setAttribute('viewBox', '0 0 24 24');
                 svg.setAttribute('class', 'w-4 h-4 transition-all duration-300');
@@ -815,12 +1080,13 @@
                 path.setAttribute('stroke-linejoin', 'round');
                 
                 if (isCollected) {
-                    path.setAttribute('fill', '#ff6a00');
-                    path.setAttribute('stroke', '#ffa033');
-                    svg.style.filter = 'drop-shadow(0 0 5px rgba(255,106,0,0.8))';
+                    path.setAttribute('fill', isLight ? '#f59e0b' : '#ff6a00');
+                    path.setAttribute('stroke', isLight ? '#d97706' : '#ffa033');
+                    svg.style.filter = isLight ? 'drop-shadow(0 0 2px rgba(245,158,11,0.5))' : 'drop-shadow(0 0 5px rgba(255,106,0,0.8))';
                 } else {
                     path.setAttribute('fill', 'transparent');
-                    path.setAttribute('stroke', '#3b4559');
+                    path.setAttribute('stroke', isLight ? '#94a3b8' : '#3b4559');
+                    svg.style.filter = 'none';
                 }
                 
                 svg.appendChild(path);
@@ -829,16 +1095,17 @@
         };
         
         function dibujarCuerpoEscena(tCtx, viewType, w, h) {
+            let isLight = document.body.classList.contains('light-mode');
             let surfaceY = h * 0.35;
             
             if (viewType === 'side') {
                 let skyGrad = tCtx.createLinearGradient(0, 0, 0, surfaceY);
-                skyGrad.addColorStop(0, '#04070a');
-                skyGrad.addColorStop(1, '#0c1524');
+                skyGrad.addColorStop(0, isLight ? '#60a5fa' : '#04070a');
+                skyGrad.addColorStop(1, isLight ? '#bae6fd' : '#0c1524');
                 tCtx.fillStyle = skyGrad; 
                 tCtx.fillRect(-5000, -5000, 10000, 5000 + surfaceY); 
                 
-                tCtx.strokeStyle = 'rgba(0, 229, 255, 0.05)';
+                tCtx.strokeStyle = isLight ? 'rgba(0,0,0,0.05)' : 'rgba(0, 229, 255, 0.05)';
                 tCtx.lineWidth = 1;
                 for(let x = -500; x < w * 2; x += 50) {
                     tCtx.beginPath(); tCtx.moveTo(x, -5000); tCtx.lineTo(x, surfaceY); tCtx.stroke();
@@ -848,20 +1115,20 @@
                 for(let p of state.surfacePoints) tCtx.lineTo(getPxX(p.x, w), surfaceY - (p.y*10)); 
                 tCtx.lineTo(5000, 5000); 
                 let g = tCtx.createLinearGradient(0, surfaceY, 0, surfaceY + 500); 
-                g.addColorStop(0, '#1c1510'); 
-                g.addColorStop(0.3, '#0f0a07'); 
-                g.addColorStop(1, '#050302'); 
+                g.addColorStop(0, isLight ? '#ca8a04' : '#1c1510'); 
+                g.addColorStop(0.3, isLight ? '#854d0e' : '#0f0a07'); 
+                g.addColorStop(1, isLight ? '#422006' : '#050302'); 
                 tCtx.fillStyle = g; tCtx.fill();
                 
-                tCtx.beginPath(); tCtx.strokeStyle = '#00e5ff'; tCtx.lineWidth = 2; 
-                tCtx.shadowColor = '#00e5ff'; tCtx.shadowBlur = 10;
+                tCtx.beginPath(); tCtx.strokeStyle = isLight ? '#0284c7' : '#00e5ff'; tCtx.lineWidth = 2; 
+                tCtx.shadowColor = isLight ? 'transparent' : '#00e5ff'; tCtx.shadowBlur = 10;
                 tCtx.moveTo(-5000, surfaceY - (state.surfacePoints[0]?.y*10)); 
                 for(let p of state.surfacePoints) tCtx.lineTo(getPxX(p.x, w), surfaceY - (p.y*10)); 
                 tCtx.lineTo(5000, surfaceY - (state.surfacePoints[state.surfacePoints.length-1]?.y*10)); 
                 tCtx.stroke();
                 tCtx.shadowBlur = 0; 
 
-                tCtx.beginPath(); tCtx.strokeStyle= 'rgba(255, 42, 42, 0.4)'; tCtx.lineWidth = 1.5; tCtx.setLineDash([10,10]); 
+                tCtx.beginPath(); tCtx.strokeStyle= isLight ? 'rgba(220, 38, 38, 0.4)' : 'rgba(255, 42, 42, 0.4)'; tCtx.lineWidth = 1.5; tCtx.setLineDash([10,10]); 
                 for(let x=-100; x<=state.targetDistance+100; x+=5) tCtx.lineTo(getPxX(x, w), getPxY_Side(-getSurfaceHeight(x)+state.maxAllowedDepthRel, h)); 
                 tCtx.stroke(); tCtx.setLineDash([]);
                 
@@ -879,59 +1146,59 @@
                     let depthLabel = formatPiesPulgadas(u.depthTarget) + " ft"; let surfY = surfaceY - (getSurfaceHeight(u.dist) * 10); 
                     tCtx.font = `bold ${14 / camera.zoom}px "Share Tech Mono"`; tCtx.textAlign = 'center'; 
                     tCtx.fillStyle = u.color; 
-                    tCtx.shadowColor = '#000'; tCtx.shadowBlur = 4;
+                    tCtx.shadowColor = isLight ? '#ffffff' : '#000'; tCtx.shadowBlur = 4;
                     tCtx.fillText(depthLabel, pxX, surfY - (8 / camera.zoom));
                     tCtx.shadowBlur = 0;
                     
-                    tCtx.beginPath(); tCtx.strokeStyle = 'rgba(255,255,255,0.2)'; tCtx.setLineDash([4, 4]); tCtx.lineWidth = 1/camera.zoom;
+                    tCtx.beginPath(); tCtx.strokeStyle = isLight ? 'rgba(0,0,0,0.2)' : 'rgba(255,255,255,0.2)'; tCtx.setLineDash([4, 4]); tCtx.lineWidth = 1/camera.zoom;
                     tCtx.moveTo(pxX, surfY - (2 / camera.zoom)); tCtx.lineTo(pxX, pxY - r); tCtx.stroke(); tCtx.setLineDash([]);
                 });
                 
                 let tx = getPxX(state.targetDistance, w), s = getSurfaceHeight(state.targetDistance), ys = surfaceY-(s*10), yt = getPxY_Side(state.targetDepth-s, h); 
                 let vaultGrad = tCtx.createLinearGradient(tx, ys, tx+45, ys);
-                vaultGrad.addColorStop(0, '#1a2235'); vaultGrad.addColorStop(1, '#0f172a');
+                vaultGrad.addColorStop(0, isLight ? '#cbd5e1' : '#1a2235'); vaultGrad.addColorStop(1, isLight ? '#94a3b8' : '#0f172a');
                 tCtx.fillStyle = vaultGrad; tCtx.fillRect(tx, ys, 45, yt-ys + 20); 
-                tCtx.strokeStyle = '#3b4559'; tCtx.lineWidth = 2; tCtx.strokeRect(tx, ys, 45, yt-ys + 20);
+                tCtx.strokeStyle = isLight ? '#64748b' : '#3b4559'; tCtx.lineWidth = 2; tCtx.strokeRect(tx, ys, 45, yt-ys + 20);
                 
-                tCtx.fillStyle = 'rgba(57, 255, 20, 0.2)'; tCtx.fillRect(tx, yt-10, 45, 20);
-                tCtx.beginPath(); tCtx.strokeStyle = '#39ff14'; tCtx.lineWidth = 2;
+                tCtx.fillStyle = isLight ? 'rgba(22, 163, 74, 0.4)' : 'rgba(57, 255, 20, 0.2)'; tCtx.fillRect(tx, yt-10, 45, 20);
+                tCtx.beginPath(); tCtx.strokeStyle = isLight ? '#16a34a' : '#39ff14'; tCtx.lineWidth = 2;
                 tCtx.moveTo(tx, yt); tCtx.lineTo(tx + 45, yt); tCtx.stroke();
                 
                 tCtx.font = `bold ${12 / camera.zoom}px "Share Tech Mono"`;
-                tCtx.textAlign = 'left'; tCtx.fillStyle = '#39ff14';
-                tCtx.shadowColor = '#000'; tCtx.shadowBlur = 4;
+                tCtx.textAlign = 'left'; tCtx.fillStyle = isLight ? '#16a34a' : '#39ff14';
+                tCtx.shadowColor = isLight ? 'transparent' : '#000'; tCtx.shadowBlur = 4;
                 let targetLabel = "TARGET: " + formatPiesPulgadas(state.targetDepth) + "'";
                 tCtx.fillText(targetLabel, tx + 50, yt + 4); tCtx.shadowBlur = 0;
                 
                 tCtx.save(); let startS = getSurfaceHeight(0); tCtx.translate(getPxX(0, w), surfaceY - (startS * 10)); 
-                tCtx.fillStyle = '#1e293b'; tCtx.beginPath(); tCtx.roundRect(-50, -12, 80, 14, 4); tCtx.fill();
-                tCtx.fillStyle = '#0f172a'; 
+                tCtx.fillStyle = isLight ? '#475569' : '#1e293b'; tCtx.beginPath(); tCtx.roundRect(-50, -12, 80, 14, 4); tCtx.fill();
+                tCtx.fillStyle = isLight ? '#94a3b8' : '#0f172a'; 
                 for(let wx = -45; wx <= 20; wx += 12) { tCtx.beginPath(); tCtx.arc(wx, -5, 4, 0, Math.PI*2); tCtx.fill(); }
                 let bodyGrad = tCtx.createLinearGradient(-40, -40, 20, -10);
-                bodyGrad.addColorStop(0, '#ff6a00'); bodyGrad.addColorStop(1, '#b45309');
+                bodyGrad.addColorStop(0, isLight ? '#fbbf24' : '#ff6a00'); bodyGrad.addColorStop(1, isLight ? '#d97706' : '#b45309');
                 tCtx.fillStyle = bodyGrad;
                 tCtx.beginPath(); tCtx.moveTo(-45, -12); tCtx.lineTo(-35, -40); tCtx.lineTo(15, -40); tCtx.lineTo(25, -12); tCtx.closePath(); tCtx.fill();
-                tCtx.fillStyle = '#0f172a'; tCtx.fillRect(-25, -35, 20, 12); 
-                tCtx.fillStyle = '#00e5ff'; tCtx.shadowColor = '#00e5ff'; tCtx.shadowBlur = 10;
+                tCtx.fillStyle = isLight ? '#334155' : '#0f172a'; tCtx.fillRect(-25, -35, 20, 12); 
+                tCtx.fillStyle = isLight ? '#0284c7' : '#00e5ff'; tCtx.shadowColor = isLight ? 'transparent' : '#00e5ff'; tCtx.shadowBlur = 10;
                 tCtx.fillRect(10, -30, 4, 4); 
                 tCtx.shadowBlur = 0;
                 tCtx.translate(15, -5); tCtx.rotate(Math.atan2(-state.pitch, 100)); 
                 let armGrad = tCtx.createLinearGradient(-50, -4, -50, 4);
-                armGrad.addColorStop(0, '#94a3b8'); armGrad.addColorStop(1, '#475569');
+                armGrad.addColorStop(0, isLight ? '#cbd5e1' : '#94a3b8'); armGrad.addColorStop(1, isLight ? '#94a3b8' : '#475569');
                 tCtx.fillStyle = armGrad; tCtx.fillRect(-60, -4, 70, 8); 
-                tCtx.fillStyle = '#1e293b'; tCtx.fillRect(-60, -6, 10, 12); 
+                tCtx.fillStyle = isLight ? '#475569' : '#1e293b'; tCtx.fillRect(-60, -6, 10, 12); 
                 tCtx.restore(); 
 
                 dibujarRuta(tCtx, (val, ht) => getPxY_Side(val, ht), 'side', w, h);
             } else {
-                tCtx.fillStyle = '#1e3f20'; 
+                tCtx.fillStyle = isLight ? '#84cc16' : '#1e3f20'; // Grass green
                 tCtx.fillRect(-5000,-5000,10000,10000); 
                 
-                tCtx.strokeStyle = 'rgba(0, 229, 255, 0.05)'; tCtx.lineWidth = 1;
+                tCtx.strokeStyle = isLight ? 'rgba(0,0,0,0.1)' : 'rgba(0, 229, 255, 0.05)'; tCtx.lineWidth = 1;
                 for(let y = 0; y < h; y += 40) { tCtx.beginPath(); tCtx.moveTo(-5000, y); tCtx.lineTo(5000, y); tCtx.stroke(); }
                 for(let x = 0; x < w; x += 40) { tCtx.beginPath(); tCtx.moveTo(x, -5000); tCtx.lineTo(x, 10000); tCtx.stroke(); }
 
-                tCtx.strokeStyle= 'rgba(0, 229, 255, 0.4)'; tCtx.lineWidth = 1.5; tCtx.setLineDash([5,5]);
+                tCtx.strokeStyle= isLight ? 'rgba(2, 132, 199, 0.4)' : 'rgba(0, 229, 255, 0.4)'; tCtx.lineWidth = 1.5; tCtx.setLineDash([5,5]);
                 
                 tCtx.beginPath(); tCtx.moveTo(-5000, getPxY_Top(getIdealLat(0)-state.runawayWidth, h)); 
                 for(let x=0; x<=state.targetDistance; x+=5) tCtx.lineTo(getPxX(x, w), getPxY_Top(getIdealLat(x)-state.runawayWidth, h)); 
@@ -947,12 +1214,12 @@
                 tCtx.lineTo(getPxX(state.targetDistance, w), getPxY_Top(getIdealLat(state.targetDistance)+state.runawayWidth, h));
                 for(let x=state.targetDistance; x>=0; x-=5) tCtx.lineTo(getPxX(x, w), getPxY_Top(getIdealLat(x)+state.runawayWidth, h)); 
                 tCtx.lineTo(-5000, getPxY_Top(getIdealLat(0)+state.runawayWidth, h)); 
-                tCtx.fillStyle = 'rgba(0, 229, 255, 0.03)'; tCtx.fill();
+                tCtx.fillStyle = isLight ? 'rgba(2, 132, 199, 0.05)' : 'rgba(0, 229, 255, 0.03)'; tCtx.fill();
 
                 state.utilities.forEach(u => { 
                     let pxX = getPxX(u.dist, w); tCtx.fillStyle = u.color; tCtx.globalAlpha=0.2; tCtx.fillRect(pxX-10,-5000,20,10000); tCtx.globalAlpha=1; 
                     
-                    let isHit = state.potholesVisited.includes(u.id); tCtx.fillStyle = isHit ? '#ff6a00' : '#1a2235'; 
+                    let isHit = state.potholesVisited.includes(u.id); tCtx.fillStyle = isHit ? (isLight ? '#ea580c' : '#ff6a00') : (isLight ? '#cbd5e1' : '#1a2235'); 
                     let pxY = getPxY_Top(u.lat, h); 
                     tCtx.strokeStyle = u.color; tCtx.lineWidth = 1.5;
                     const pSize = 15;
@@ -961,39 +1228,39 @@
                     tCtx.fillRect(pxX - pHalf, pxY - pHalf, pSize, pSize); 
                     
                     if (isHit) { 
-                        tCtx.fillStyle = "#fff"; 
+                        tCtx.fillStyle = isLight ? "#0f172a" : "#fff"; 
                         tCtx.font = "bold 10px Arial"; 
                         tCtx.textAlign = "center"; 
                         tCtx.fillText("★", pxX, pxY + 3.5); 
                     } 
                 });
                 
-                tCtx.fillStyle = '#1a2235'; tCtx.strokeStyle = '#39ff14'; tCtx.lineWidth = 2;
+                tCtx.fillStyle = isLight ? '#cbd5e1' : '#1a2235'; tCtx.strokeStyle = isLight ? '#16a34a' : '#39ff14'; tCtx.lineWidth = 2;
                 let tx = getPxX(state.targetDistance, w), ty = getPxY_Top(state.targetLat, h); 
                 tCtx.fillRect(tx, ty-12, 20, 24); tCtx.strokeRect(tx, ty-12, 20, 24);
                 
                 tCtx.save(); tCtx.translate(getPxX(0, w), getPxY_Top(0, h)); 
-                tCtx.fillStyle = '#0f172a'; tCtx.fillRect(-50, -25, 75, 12); tCtx.fillRect(-50, 13, 75, 12); 
-                tCtx.fillStyle = '#ff6a00'; tCtx.fillRect(-45, -13, 65, 26); 
-                tCtx.fillStyle = '#1e293b'; tCtx.fillRect(-25, -8, 20, 16); 
-                tCtx.fillStyle = '#94a3b8'; tCtx.fillRect(20, -4, 30, 8); 
+                tCtx.fillStyle = isLight ? '#475569' : '#0f172a'; tCtx.fillRect(-50, -25, 75, 12); tCtx.fillRect(-50, 13, 75, 12); 
+                tCtx.fillStyle = isLight ? '#f59e0b' : '#ff6a00'; tCtx.fillRect(-45, -13, 65, 26); 
+                tCtx.fillStyle = isLight ? '#334155' : '#1e293b'; tCtx.fillRect(-25, -8, 20, 16); 
+                tCtx.fillStyle = isLight ? '#cbd5e1' : '#94a3b8'; tCtx.fillRect(20, -4, 30, 8); 
                 tCtx.restore(); 
                 
                 dibujarRuta(tCtx, (val, ht) => getPxY_Top(val, ht), 'top', w, h);
                 
-                if (state.locator) {
+                if (state.locator && state.showLocator) {
                     let locPx = getPxX(state.locator.dist, w), locPy = getPxY_Top(state.locator.lat, h); let baseRadius = 12; 
                     tCtx.beginPath(); tCtx.arc(locPx, locPy, baseRadius / camera.zoom, 0, Math.PI*2); 
-                    tCtx.fillStyle = 'rgba(0, 229, 255, 0.2)'; tCtx.fill(); 
-                    tCtx.lineWidth = 2 / camera.zoom; tCtx.strokeStyle = '#00e5ff'; tCtx.stroke();
+                    tCtx.fillStyle = isLight ? 'rgba(2, 132, 199, 0.2)' : 'rgba(0, 229, 255, 0.2)'; tCtx.fill(); 
+                    tCtx.lineWidth = 2 / camera.zoom; tCtx.strokeStyle = isLight ? '#0284c7' : '#00e5ff'; tCtx.stroke();
                     
-                    tCtx.beginPath(); tCtx.strokeStyle = '#00e5ff'; tCtx.lineWidth = 2 / camera.zoom; let crossSize = (baseRadius+5) / camera.zoom; 
+                    tCtx.beginPath(); tCtx.strokeStyle = isLight ? '#0284c7' : '#00e5ff'; tCtx.lineWidth = 2 / camera.zoom; let crossSize = (baseRadius+5) / camera.zoom; 
                     tCtx.moveTo(locPx - crossSize, locPy); tCtx.lineTo(locPx + crossSize, locPy); 
                     tCtx.moveTo(locPx, locPy - crossSize); tCtx.lineTo(locPx, locPy + crossSize); tCtx.stroke();
                     
                     let diff = Math.abs(state.locator.dist - state.distance); let distLabel = diff.toFixed(1) + " ft"; 
                     tCtx.font = `bold ${12 / camera.zoom}px "Share Tech Mono"`; tCtx.textAlign = 'center'; 
-                    tCtx.fillStyle = '#00e5ff'; tCtx.shadowColor = '#000'; tCtx.shadowBlur = 4;
+                    tCtx.fillStyle = isLight ? '#0284c7' : '#00e5ff'; tCtx.shadowColor = isLight ? 'transparent' : '#000'; tCtx.shadowBlur = 4;
                     tCtx.fillText(distLabel, locPx, locPy - (baseRadius / camera.zoom + 8)); tCtx.shadowBlur = 0;
                 }
             }
@@ -1017,9 +1284,9 @@
         }
 
         function chequearCondiciones(finalCheck) {
-            let iL = getIdealLat(state.distance); if (Math.abs(state.lat - iL) > state.runawayWidth) { mostrarGameOver("OUT OF BOUNDS", "Safety corridor perimeter breach.", "red"); return true; }
-            let relD = state.absElevation + getSurfaceHeight(state.distance); if (relD > state.maxAllowedDepthRel) { mostrarGameOver("MAX DEPTH VIOLATION", "Permitted depth envelope exceeded.", "red"); return true; }
-            if (relD <= 1.0 && state.distance >= state.maxRodLength) { mostrarGameOver("MIN COVERAGE ERROR", "Insufficient top cover. Risk of surfacing.", "orange"); return true; }
+            let iL = getIdealLat(state.distance); if (Math.abs(state.lat - iL) > state.runawayWidth) { window.playGameOverSound(); mostrarGameOver("OUT OF BOUNDS", "Safety corridor perimeter breach.", "red"); return true; }
+            let relD = state.absElevation + getSurfaceHeight(state.distance); if (relD > state.maxAllowedDepthRel) { window.playGameOverSound(); mostrarGameOver("MAX DEPTH VIOLATION", "Permitted depth envelope exceeded.", "red"); return true; }
+            if (relD <= 1.0 && state.distance >= state.maxRodLength) { window.playGameOverSound(); mostrarGameOver("MIN COVERAGE ERROR", "Insufficient top cover. Risk of surfacing.", "orange"); return true; }
             let rP = [...state.path]; if (!isAnimating) rP.push({ distance: state.distance, absElevation: state.absElevation });
             for (let i = 1; i < rP.length; i++) {
                 for (let u of state.utilities) {
@@ -1028,13 +1295,13 @@
                         if (t >= 0 && t <= 1) {
                             let e = rP[i-1].absElevation + (rP[i].absElevation - rP[i-1].absElevation) * t;
                             let rodRadiusFt = 1.5 / 12; let utilityRadiusFt = u.diamFt / 2; let gapFt = Math.abs(e - u.absElevation) - utilityRadiusFt - rodRadiusFt; let clearanceInches = gapFt * 12;
-                            if (clearanceInches <= 1.0) { playSound(50, 'square', 0.8, 0.3); mostrarGameOver("CRITICAL STRIKE!", `Asset impact detected. Clearance: ${clearanceInches.toFixed(1)}".`, "red"); return true; }
+                            if (clearanceInches <= 1.0) { window.playGameOverSound(); mostrarGameOver("CRITICAL STRIKE!", `Asset impact detected. Clearance: ${clearanceInches.toFixed(1)}".`, "red"); return true; }
                         }
                     }
                 }
             }
-            if (relD < -0.15 && state.distance > 5) { mostrarGameOver("FRAC-OUT", "Unintended surface return. Pressure relief.", "red"); return true; }
-            if (finalCheck && state.distance >= state.targetDistance) { if (Math.abs(relD - state.targetDepth) <= 0.7 && Math.abs(state.lat - state.targetLat) <= 1.5) { playSound(600, 'sine', 0.5, 0.2); setTimeout(()=>playSound(800, 'sine', 0.5, 0.15), 200); mostrarGameOver("SECTOR COMPLETE", `Target precision verified.`, "green", true); } else { mostrarGameOver("TARGET MISSED", "Precision parameters not met.", "orange"); } return true; }
+            if (relD < -0.15 && state.distance > 5) { window.playGameOverSound(); mostrarGameOver("FRAC-OUT", "Unintended surface return. Pressure relief.", "red"); return true; }
+            if (finalCheck && state.distance >= state.targetDistance) { if (Math.abs(relD - state.targetDepth) <= 0.7 && Math.abs(state.lat - state.targetLat) <= 1.5) { playSound(600, 'sine', 0.5, 0.2); setTimeout(()=>playSound(800, 'sine', 0.5, 0.15), 200); mostrarGameOver("SECTOR COMPLETE", `Target precision verified.`, "green", true); } else { window.playGameOverSound(); mostrarGameOver("TARGET MISSED", "Precision parameters not met.", "orange"); } return true; }
             return false;
         }
 
@@ -1065,7 +1332,7 @@
                     setEnginePitch(35); 
                     chequearCondiciones(true); 
                     
-                    // Lógica para quitar el HUD 5 segundos después de detenerse
+                    // Logic to remove HUD 5 seconds after stopping
                     if(movingHud) {
                         if (window.hudPersistenceTimeout) clearTimeout(window.hudPersistenceTimeout);
                         window.hudPersistenceTimeout = setTimeout(() => {
@@ -1077,7 +1344,6 @@
                 let t = animationData.progress; let f = animationData.current.type === 'push' ? animationData.current.start : animationData.current.end; let to = animationData.current.type === 'push' ? animationData.current.end : animationData.current.start;
                 state.distance = f.distance + (to.distance - f.distance) * t; state.absElevation = f.absElevation + (to.absElevation - f.absElevation) * t; state.lat = f.lat + (to.lat - f.lat) * t; state.pitch = f.pitch + (to.pitch - f.pitch) * t; state.latAngle = f.latAngle + (to.latAngle - f.latAngle) * t; state.rods = f.rods + (to.rods - f.rods) * t;
                 
-                // Mostrar HUD móvil mientras se mueve
                 if(movingHud) {
                     if (window.hudPersistenceTimeout) {
                         clearTimeout(window.hudPersistenceTimeout);
@@ -1096,7 +1362,6 @@
             isAnimating = true; 
             document.querySelectorAll('.btn-action').forEach(b => b.disabled = true); 
             
-            // Limpiar cualquier temporizador de ocultación previo
             if (window.hudPersistenceTimeout) {
                 clearTimeout(window.hudPersistenceTimeout);
                 window.hudPersistenceTimeout = null;
@@ -1106,7 +1371,7 @@
                 queue: q, 
                 current: q.shift(), 
                 progress: 0, 
-                speed: 0.0192, // Velocidad reducida un 25%
+                speed: 0.0192, 
                 startTime: Date.now() 
             }; 
             requestAnimationFrame(animTick); 
@@ -1121,19 +1386,20 @@
                 if (!isDrill && af !== 0) { let mults = getClockMultipliers(s.clock); let pitchChange = af * rodsPerChunk; s.pitch += pitchChange * mults.p; s.latAngle += pitchChange * mults.l; }
                 s.distance += distPerChunk; s.rods += rodsPerChunk; s.absElevation += -(s.pitch / 100) * distPerChunk; s.lat += (s.latAngle / 100) * distPerChunk; q.push({ type: 'push', start: start, end: { ...s } });
             }
-            setEnginePitch(60, 0.08); iniciarAnim(q);
+            setEnginePitch(60, 0.30); iniciarAnim(q);
         };
         window.iniciarRetrocederFraccion = function(frac) {
             if (isAnimating || state.path.length <= 1) return; state.metrics.back++; let pies = state.maxRodLength * frac; let targetDist = Math.max(0, state.distance - pies);
             let q = []; let poppedDist = 0; for(let i=1; i < state.path.length; i++) { let endNode = state.path[state.path.length - i]; let startNode = state.path[state.path.length - 1 - i]; q.push({ type: 'pull', start: startNode, end: endNode }); poppedDist += (endNode.distance - startNode.distance); if (state.distance - poppedDist <= targetDist + 0.01) break; }
-            if (q.length > 0) { setEnginePitch(50, 0.05); iniciarAnim(q); }
+            if (q.length > 0) { setEnginePitch(50, 0.25); iniciarAnim(q); }
         };
-        window.programarFuerza = function(v) { if(state.gameOver) return; state.steeringForce = Math.max(-50, Math.min(50, state.steeringForce + v)); if(Math.abs(state.steeringForce)>=27) { mostrarError("SNAP ALERT!"); playSound(800,'square',0.3,0.05); } else playSound(300,'sine',0.1); window.actualizarPantallas(); };
-        window.limpiarFuerza = function() { if (state.maxRodLength === 6) state.steeringForce = 8; else if (state.maxRodLength === 20) state.steeringForce = 24; else state.steeringForce = 12; playSound(100,'sine',0.2); window.actualizarPantallas(); };
-        window.ajustarPitchInicial = function(v) { if(state.gameOver || state.rods>0) return; state.pitch = Math.max(-35, Math.min(50, state.pitch+v)); if (state.path.length>0) state.path[0].pitch = state.pitch; playSound(150,'sine',0.1); window.actualizarPantallas(); dibujarEscena(); };
-        window.setClock = function(h) { if(state.gameOver) return; state.clock = h; playSound(200,'sine',0.05); window.renderClock(); window.actualizarPantallas(); };
+        window.programarFuerza = function(v) { if(state.gameOver) return; state.steeringForce = Math.max(-50, Math.min(50, state.steeringForce + v)); if(Math.abs(state.steeringForce)>=27) { mostrarError("SNAP ALERT!"); playSound(800,'square',0.40,0.05); } else playSound(300,'sine',0.40); window.actualizarPantallas(); };
+        window.limpiarFuerza = function() { if (state.maxRodLength === 6) state.steeringForce = 8; else if (state.maxRodLength === 20) state.steeringForce = 24; else state.steeringForce = 12; playSound(100,'sine',0.40); window.actualizarPantallas(); };
+        window.ajustarPitchInicial = function(v) { if(state.gameOver || state.rods>0) return; state.pitch = Math.max(-35, Math.min(50, state.pitch+v)); if (state.path.length>0) state.path[0].pitch = state.pitch; playSound(150,'sine',0.40); window.actualizarPantallas(); dibujarEscena(); };
+        window.setClock = function(h) { if(state.gameOver) return; state.clock = h; playSound(200,'sine',0.40); window.renderClock(); window.actualizarPantallas(); };
         window.renderClock = function() {
             const container = document.getElementById('clock-container'); if (!container) return; container.innerHTML = '';
+            
             for(let i=1; i<=12; i++) { 
                 let a = (i * 30 - 90) * (Math.PI / 180); 
                 let cx = 50 + 36 * Math.cos(a); 
@@ -1220,17 +1486,18 @@
         };
 
         function mostrarGameOver(tit, msg, col, isWin = false) { state.gameOver = true; clearInterval(state.timerInterval); document.querySelectorAll('.btn-action').forEach(b => b.disabled = true); const m = document.getElementById('game-over-modal'), t = document.getElementById('game-over-title'); t.className = `text-2xl lg:text-4xl font-black mb-3 text-center uppercase tracking-widest ${col==='red'?'emergency-alert':col==='green'?'text-[#39ff14] glow-text-green':'text-[#ff6a00] glow-text-orange'}`; t.innerText = tit; document.getElementById('game-over-msg').innerText = msg; const s = document.getElementById('star-rating'); s.innerHTML = ''; const newRecordForm = document.getElementById('new-record-form'); if (isWin) { window.guardarProgresoLocal(state.level, state.potholesVisited.length); for(let i=0; i<state.utilities.length; i++) { let span = document.createElement('span'); span.innerText = '★'; span.className = state.potholesVisited.length > i ? 'text-[#ff6a00] drop-shadow-[0_0_10px_rgba(255,106,0,0.8)]' : 'text-[#3b4559]'; s.appendChild(span); } document.getElementById('btn-next').classList.remove('hidden'); document.getElementById('btn-retry').classList.add('hidden'); if (state.potholesVisited.length === state.utilities.length) { newRecordForm.classList.remove('hidden'); newRecordForm.classList.add('flex'); document.getElementById('btn-next').classList.add('hidden'); } else { newRecordForm.classList.add('hidden'); newRecordForm.classList.remove('flex'); } } else { document.getElementById('btn-next').classList.add('hidden'); document.getElementById('btn-retry').classList.remove('hidden'); newRecordForm.classList.add('hidden'); newRecordForm.classList.remove('flex'); } m.classList.remove('hidden'); m.classList.add('flex'); }
-        window.generarInformeFinal = function() {};
-        window.toggleReportView = function() {};
-        function dibujarReporte() {}
-        window.cerrarInforme = function() {};
+        window.generarInformeFinal = function() { reportViewType = 'side'; const btn = document.getElementById('btn-report-view'); if (btn) btn.innerText = 'VIEW: MAIN'; let m = Math.floor(state.timeElapsed / 60); let s = state.timeElapsed % 60; document.getElementById('report-time').innerText = `${(m < 10 ? "0"+m : m)}:${(s < 10 ? "0"+s : s)}`; document.getElementById('metric-d14').innerText = state.metrics.d14; document.getElementById('metric-d12').innerText = state.metrics.d12; document.getElementById('metric-df').innerText = state.metrics.df; document.getElementById('metric-p14').innerText = state.metrics.p14; document.getElementById('metric-p12').innerText = state.metrics.p12; document.getElementById('metric-pf').innerText = state.metrics.pf; document.getElementById('metric-b').innerText = state.metrics.back; document.getElementById('metric-rods').innerText = state.rods.toFixed(1); dibujarReporte(); document.getElementById('report-modal').classList.remove('hidden'); document.getElementById('report-modal').classList.add('flex'); };
+        window.toggleReportView = function() { reportViewType = reportViewType === 'side' ? 'top' : 'side'; const btn = document.getElementById('btn-report-view'); if (btn) btn.innerText = reportViewType === 'side' ? 'VIEW: MAIN' : 'VIEW: AERIAL'; dibujarReporte(); };
+        function dibujarReporte() { const rc = document.getElementById('report-canvas'); const rCtx = rc.getContext('2d'); rCtx.clearRect(0,0,1200,400); rCtx.save(); rCtx.beginPath(); rCtx.rect(0,0,1200,400); rCtx.clip(); let tempCamera = {...camera}; camera = {zoom: 1, offsetX: 0, offsetY: 0}; dibujarCuerpoEscena(rCtx, reportViewType, 1200, 400); camera = tempCamera; rCtx.fillStyle = "rgba(0,0,0,0.5)"; rCtx.fillRect(10, 10, 240, 50); rCtx.fillStyle = "#00e5ff"; rCtx.font = "bold 24px 'Share Tech Mono'"; rCtx.fillText(reportViewType === 'side' ? "> MAIN FEED LOG" : "> AERIAL FEED LOG", 20, 42); rCtx.restore(); }
+        window.cerrarInforme = function() { document.getElementById('report-modal').classList.add('hidden'); document.getElementById('report-modal').classList.remove('flex'); };
         window.saveRecord = function() { const nameInput = document.getElementById('player-name-input'); const name = nameInput.value.trim(); if(!name) { mostrarError("CALLSIGN REQUIRED"); return; } if(window.dbGuardarRecord) { window.dbGuardarRecord(name, state.level, state.timeElapsed, state.potholesVisited.length); } document.getElementById('new-record-form').classList.add('hidden'); nameInput.value = ''; window.nextLevel(); };
 
         const apwaTypes = [ { name: "SEWER", color: '#32CD32', diam: 12/12 }, { name: "POWER", color: '#ff2a2a', diam: 4/12 }, { name: "WATER", color: '#00e5ff', diam: 6/12 }, { name: "TELECOM", color: '#ff6a00', diam: 4/12 } ];
         function generateLevel(lvl) {
             clearInterval(state.timerInterval); let currentRodSize = parseInt(document.getElementById('rod-length-select').value) || 10;
             state.level = lvl; state.distance = 0; state.lat = 0; state.rods = 0; state.pitch = -18 - Math.random() * 8; state.latAngle = 0; state.gameOver = false; state.errors = []; state.potholesVisited = []; state.surfacePoints = [];
-            state.maxRodLength = currentRodSize; state.locator = null; window.resetZoom(); window.limpiarFuerza();
+            state.maxRodLength = currentRodSize; state.locator = null; state.showLocator = true; window.resetZoom(); window.limpiarFuerza();
+            let locToggle = document.getElementById('locator-toggle'); if(locToggle) { locToggle.classList.remove('text-[#64748b]'); locToggle.classList.add('text-[#00e5ff]'); }
             state.metrics = { d14: 0, d12: 0, df: 0, p14: 0, p12: 0, pf: 0, back: 0 }; state.startTime = Date.now(); state.timeElapsed = 0; state.timerInterval = setInterval(updateTimerDisplay, 1000); document.getElementById('time-display').innerText = "T: 00:00";
             for (let i = -100; i <= (100 + (lvl - 1) * 15) + 100; i += 5) {
                 let surfaceY = lvl === 1 ? 0 : Math.sin(i * 0.04) * 2.5 + Math.cos(i * 0.015) * 2.0;
@@ -1250,6 +1517,9 @@
         }
         
         window.startGame = function() { 
+            if (introAudioCtx && introAudioCtx.state !== 'closed') {
+                introAudioCtx.close();
+            }
             const splash = document.getElementById('splash-screen'); 
             if (splash) splash.style.display = 'none'; 
             window.toggleFullScreen();
